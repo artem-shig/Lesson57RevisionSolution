@@ -12,6 +12,23 @@
 
 #include "logic.h"
 
+int count_dig_number(long long number) {
+
+	if (number == 0) {
+
+		return 0;
+	}
+
+	return count_dig_number(number / 10) + 1;
+}
+
 bool is_digits_count_odd(long long number) {
-	return false;
+
+	if (number > -10 && number < 10) {
+		return true;
+	}
+
+	int count = count_dig_number(number);
+
+	return count % 2 != 0 ? true : false;
 }
