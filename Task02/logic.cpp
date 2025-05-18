@@ -13,5 +13,14 @@
 #include "logic.h"
 
 bool is_power_of_four(int number) {
+
+	if (number == 1) {
+		return true;
+	}
+
+	else if (number % 4 == 0) {
+		return is_power_of_four(number / 4);
+	}
+
 	return false;
 }
